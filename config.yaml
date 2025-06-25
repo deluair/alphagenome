@@ -1,0 +1,19 @@
+api:
+  # API key is now loaded from environment variable ALPHAGENOME_API_KEY
+  # Create a .env file with: ALPHAGENOME_API_KEY=your_key_here
+  rate_limit: 100
+
+analysis:
+  default_interval_size: 1000000
+  min_effect_threshold: 0.1
+  cache_results: true
+
+visualization:
+  default_format: "html"
+  color_scheme: "viridis"
+  figure_size: [12, 8]
+
+output:
+  base_directory: "./results"
+  include_raw_data: true
+  compression: "gzip" 
