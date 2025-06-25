@@ -1,0 +1,138 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "alphagenome-analytics"
+dynamic = ["version"]
+description = "A comprehensive genomic variant analysis toolkit built on top of Google DeepMind's AlphaGenome API"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+keywords = [
+    "genomics",
+    "bioinformatics",
+    "variant analysis",
+    "machine learning",
+    "alphagenome",
+    "DNA sequencing"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+dependencies = [
+    "alphagenome>=0.1.0",
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "plotly>=5.0.0",
+    "scipy>=1.7.0",
+    "scikit-learn>=1.0.0",
+    "pysam>=0.19.0",
+    "pybedtools>=0.9.0",
+    "pyvcf3>=1.0.0",
+    "click>=8.0.0",
+    "tqdm>=4.62.0",
+    "pyyaml>=6.0",
+    "jupyter>=1.0.0",
+    "ipywidgets>=7.0.0",
+    "dash>=2.0.0",
+    "dash-bio>=1.0.0",
+    "statsmodels>=0.13.0",
+    "biopython>=1.79",
+    "requests>=2.25.0",
+    "aiohttp>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=3.0.0",
+    "pytest-asyncio>=0.20.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "pre-commit>=2.15.0",
+]
+docs = [
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "myst-parser>=0.17.0",
+    "sphinx-autodoc-typehints>=1.17.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/alphagenome-analytics"
+Documentation = "https://alphagenome-analytics.readthedocs.io"
+Repository = "https://github.com/your-username/alphagenome-analytics.git"
+"Bug Tracker" = "https://github.com/your-username/alphagenome-analytics/issues"
+
+[project.scripts]
+alphagenome-analyze = "alphagenome_analytics.cli:main"
+alphagenome-batch = "alphagenome_analytics.scripts.batch_process:main"
+alphagenome-visualize = "alphagenome_analytics.scripts.visualize:main"
+
+[tool.hatch.version]
+path = "alphagenome_analytics/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/alphagenome_analytics",
+    "/scripts",
+    "/tests",
+    "/examples",
+    "/docs",
+]
+
+[tool.black]
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 
