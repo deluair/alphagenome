@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaGenome Analytics - Real Variant Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        .summary {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .summary h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-box.pathogenic {
+            background-color: #e74c3c;
+        }
+        .stat-box.missense {
+            background-color: #f39c12;
+        }
+        .stat-box.splice {
+            background-color: #9b59b6;
+        }
+        .stat-box.frameshift {
+            background-color: #e67e22;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .variant {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .variant-header {
+            background-color: #34495e;
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .variant-content {
+            padding: 20px;
+        }
+        .variant-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .detail-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .detail-section h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .predictions {
+            margin-top: 20px;
+        }
+        .prediction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .prediction-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        .prediction-box h5 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+        .metric-value {
+            font-weight: bold;
+            color: #2980b9;
+        }
+        .clinical-significance {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .pathogenic {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .likely-pathogenic {
+            background-color: #f39c12;
+            color: white;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+        .timestamp {
+            font-style: italic;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AlphaGenome Analytics</h1>
+            <div class="subtitle">Real Genomic Variant Analysis Report</div>
+            <div class="timestamp">Generated on June 25, 2025 at 01:06 PM</div>
+        </div>
+        
+        <div class="summary">
+            <h2>Analysis Summary</h2>
+            <p>This report presents the analysis of 5 real pathogenic variants from the ClinVar database 
+            using AlphaGenome Analytics. These variants represent well-documented genomic changes with known 
+            clinical significance in cancer predisposition and genetic disorders.</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Total Variants</div>
+            </div>
+            <div class="stat-box pathogenic">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Pathogenic Variants</div>
+            </div>
+            <div class="stat-box missense">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Missense Variants</div>
+            </div>
+            <div class="stat-box splice">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Splice Variants</div>
+            </div>
+        </div>
+
+        <div class="variant">
+            <div class="variant-header">
+                Variant #1: BRCA1_c.140G>T 
+                <span class="clinical-significance pathogenic-likely-pathogenic">
+                    Pathogenic/Likely pathogenic
+                </span>
+            </div>
+            <div class="variant-content">
+                <div class="variant-details">
+                    <div class="detail-section">
+                        <h4>Genomic Information</h4>
+                        <div class="metric">
+                            <span>Gene:</span>
+                            <span class="metric-value">BRCA1</span>
+                        </div>
+                        <div class="metric">
+                            <span>Location:</span>
+                            <span class="metric-value">chr17:43106528</span>
+                        </div>
+                        <div class="metric">
+                            <span>Change:</span>
+                            <span class="metric-value">G → T</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (c.):</span>
+                            <span class="metric-value">c.140G>T</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (p.):</span>
+                            <span class="metric-value">p.Cys47Phe</span>
+                        </div>
+                        <div class="metric">
+                            <span>Consequence:</span>
+                            <span class="metric-value">Missense Variant</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Clinical Information</h4>
+                        <div class="metric">
+                            <span>Condition:</span>
+                            <span class="metric-value">Breast-ovarian cancer, familial 1</span>
+                        </div>
+                        <div class="metric">
+                            <span>ClinVar ID:</span>
+                            <span class="metric-value">VCV000054247</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <strong>Description:</strong><br>
+                            Pathogenic missense variant in BRCA1 affecting DNA repair function
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="predictions">
+                    <h4>AlphaGenome Predictions</h4>
+                    <div class="prediction-grid">
+                        <div class="prediction-box">
+                            <h5>RNA-seq Effects</h5>
+
+                            <div class="metric">
+                                <span>Mean Effect:</span>
+                                <span class="metric-value">0.087</span>
+                            </div>
+                            <div class="metric">
+                                <span>Max Effect:</span>
+                                <span class="metric-value">0.866</span>
+                            </div>
+                            <div class="metric">
+                                <span>Total Effect:</span>
+                                <span class="metric-value">149.4</span>
+                            </div>
+                            <div class="metric">
+                                <span>Correlation:</span>
+                                <span class="metric-value">0.743</span>
+                            </div>
+
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>CAGE Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.683</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>DNase Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.270</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variant">
+            <div class="variant-header">
+                Variant #2: BRCA1_c.5277+1G>A 
+                <span class="clinical-significance pathogenic">
+                    Pathogenic
+                </span>
+            </div>
+            <div class="variant-content">
+                <div class="variant-details">
+                    <div class="detail-section">
+                        <h4>Genomic Information</h4>
+                        <div class="metric">
+                            <span>Gene:</span>
+                            <span class="metric-value">BRCA1</span>
+                        </div>
+                        <div class="metric">
+                            <span>Location:</span>
+                            <span class="metric-value">chr17:43057051</span>
+                        </div>
+                        <div class="metric">
+                            <span>Change:</span>
+                            <span class="metric-value">G → A</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (c.):</span>
+                            <span class="metric-value">c.5277+1G>A</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (p.):</span>
+                            <span class="metric-value">None</span>
+                        </div>
+                        <div class="metric">
+                            <span>Consequence:</span>
+                            <span class="metric-value">Splice Donor Variant</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Clinical Information</h4>
+                        <div class="metric">
+                            <span>Condition:</span>
+                            <span class="metric-value">Breast-ovarian cancer, familial 1</span>
+                        </div>
+                        <div class="metric">
+                            <span>ClinVar ID:</span>
+                            <span class="metric-value">VCV000037654</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <strong>Description:</strong><br>
+                            Pathogenic splice donor variant disrupting normal splicing
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="predictions">
+                    <h4>AlphaGenome Predictions</h4>
+                    <div class="prediction-grid">
+                        <div class="prediction-box">
+                            <h5>RNA-seq Effects</h5>
+
+                            <div class="metric">
+                                <span>Mean Effect:</span>
+                                <span class="metric-value">0.088</span>
+                            </div>
+                            <div class="metric">
+                                <span>Max Effect:</span>
+                                <span class="metric-value">1.518</span>
+                            </div>
+                            <div class="metric">
+                                <span>Total Effect:</span>
+                                <span class="metric-value">160.7</span>
+                            </div>
+                            <div class="metric">
+                                <span>Correlation:</span>
+                                <span class="metric-value">0.597</span>
+                            </div>
+
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>CAGE Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.343</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>DNase Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.016</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">Moderate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variant">
+            <div class="variant-header">
+                Variant #3: BRCA2_c.3160_3163del 
+                <span class="clinical-significance pathogenic">
+                    Pathogenic
+                </span>
+            </div>
+            <div class="variant-content">
+                <div class="variant-details">
+                    <div class="detail-section">
+                        <h4>Genomic Information</h4>
+                        <div class="metric">
+                            <span>Gene:</span>
+                            <span class="metric-value">BRCA2</span>
+                        </div>
+                        <div class="metric">
+                            <span>Location:</span>
+                            <span class="metric-value">chr13:32337515</span>
+                        </div>
+                        <div class="metric">
+                            <span>Change:</span>
+                            <span class="metric-value">GATA → </span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (c.):</span>
+                            <span class="metric-value">c.3160_3163del</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (p.):</span>
+                            <span class="metric-value">p.Asp1054fs</span>
+                        </div>
+                        <div class="metric">
+                            <span>Consequence:</span>
+                            <span class="metric-value">Frameshift Variant</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Clinical Information</h4>
+                        <div class="metric">
+                            <span>Condition:</span>
+                            <span class="metric-value">Breast-ovarian cancer, familial 2</span>
+                        </div>
+                        <div class="metric">
+                            <span>ClinVar ID:</span>
+                            <span class="metric-value">RCV000031405</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <strong>Description:</strong><br>
+                            Pathogenic frameshift deletion causing truncated protein
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="predictions">
+                    <h4>AlphaGenome Predictions</h4>
+                    <div class="prediction-grid">
+                        <div class="prediction-box">
+                            <h5>RNA-seq Effects</h5>
+
+                            <div class="metric">
+                                <span>Mean Effect:</span>
+                                <span class="metric-value">0.453</span>
+                            </div>
+                            <div class="metric">
+                                <span>Max Effect:</span>
+                                <span class="metric-value">2.008</span>
+                            </div>
+                            <div class="metric">
+                                <span>Total Effect:</span>
+                                <span class="metric-value">503.4</span>
+                            </div>
+                            <div class="metric">
+                                <span>Correlation:</span>
+                                <span class="metric-value">0.438</span>
+                            </div>
+
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>CAGE Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.253</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">Moderate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>DNase Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">-0.127</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">Moderate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variant">
+            <div class="variant-header">
+                Variant #4: TP53_c.524G>A 
+                <span class="clinical-significance pathogenic">
+                    Pathogenic
+                </span>
+            </div>
+            <div class="variant-content">
+                <div class="variant-details">
+                    <div class="detail-section">
+                        <h4>Genomic Information</h4>
+                        <div class="metric">
+                            <span>Gene:</span>
+                            <span class="metric-value">TP53</span>
+                        </div>
+                        <div class="metric">
+                            <span>Location:</span>
+                            <span class="metric-value">chr17:7674220</span>
+                        </div>
+                        <div class="metric">
+                            <span>Change:</span>
+                            <span class="metric-value">G → A</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (c.):</span>
+                            <span class="metric-value">c.524G>A</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (p.):</span>
+                            <span class="metric-value">p.Arg175His</span>
+                        </div>
+                        <div class="metric">
+                            <span>Consequence:</span>
+                            <span class="metric-value">Missense Variant</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Clinical Information</h4>
+                        <div class="metric">
+                            <span>Condition:</span>
+                            <span class="metric-value">Li-Fraumeni syndrome</span>
+                        </div>
+                        <div class="metric">
+                            <span>ClinVar ID:</span>
+                            <span class="metric-value">VCV000012771</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <strong>Description:</strong><br>
+                            Well-known hotspot mutation in TP53 DNA-binding domain
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="predictions">
+                    <h4>AlphaGenome Predictions</h4>
+                    <div class="prediction-grid">
+                        <div class="prediction-box">
+                            <h5>RNA-seq Effects</h5>
+
+                            <div class="metric">
+                                <span>Mean Effect:</span>
+                                <span class="metric-value">0.087</span>
+                            </div>
+                            <div class="metric">
+                                <span>Max Effect:</span>
+                                <span class="metric-value">0.800</span>
+                            </div>
+                            <div class="metric">
+                                <span>Total Effect:</span>
+                                <span class="metric-value">146.1</span>
+                            </div>
+                            <div class="metric">
+                                <span>Correlation:</span>
+                                <span class="metric-value">0.737</span>
+                            </div>
+
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>CAGE Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.569</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>DNase Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.299</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variant">
+            <div class="variant-header">
+                Variant #5: CFTR_c.1521_1523delCTT 
+                <span class="clinical-significance pathogenic">
+                    Pathogenic
+                </span>
+            </div>
+            <div class="variant-content">
+                <div class="variant-details">
+                    <div class="detail-section">
+                        <h4>Genomic Information</h4>
+                        <div class="metric">
+                            <span>Gene:</span>
+                            <span class="metric-value">CFTR</span>
+                        </div>
+                        <div class="metric">
+                            <span>Location:</span>
+                            <span class="metric-value">chr7:117548628</span>
+                        </div>
+                        <div class="metric">
+                            <span>Change:</span>
+                            <span class="metric-value">CTT → </span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (c.):</span>
+                            <span class="metric-value">c.1521_1523delCTT</span>
+                        </div>
+                        <div class="metric">
+                            <span>HGVS (p.):</span>
+                            <span class="metric-value">p.Phe508del</span>
+                        </div>
+                        <div class="metric">
+                            <span>Consequence:</span>
+                            <span class="metric-value">Inframe Deletion</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Clinical Information</h4>
+                        <div class="metric">
+                            <span>Condition:</span>
+                            <span class="metric-value">Cystic fibrosis</span>
+                        </div>
+                        <div class="metric">
+                            <span>ClinVar ID:</span>
+                            <span class="metric-value">VCV000001393</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <strong>Description:</strong><br>
+                            Most common CFTR mutation causing cystic fibrosis
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="predictions">
+                    <h4>AlphaGenome Predictions</h4>
+                    <div class="prediction-grid">
+                        <div class="prediction-box">
+                            <h5>RNA-seq Effects</h5>
+
+                            <div class="metric">
+                                <span>Mean Effect:</span>
+                                <span class="metric-value">-0.002</span>
+                            </div>
+                            <div class="metric">
+                                <span>Max Effect:</span>
+                                <span class="metric-value">0.307</span>
+                            </div>
+                            <div class="metric">
+                                <span>Total Effect:</span>
+                                <span class="metric-value">77.2</span>
+                            </div>
+                            <div class="metric">
+                                <span>Correlation:</span>
+                                <span class="metric-value">0.909</span>
+                            </div>
+
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>CAGE Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.174</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">Moderate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prediction-box">
+                            <h5>DNase Effects</h5>
+                            <div class="metric">
+                                <span>Effect Size:</span>
+                                <span class="metric-value">0.490</span>
+                            </div>
+                            <div class="metric">
+                                <span>Significance:</span>
+                                <span class="metric-value">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>AlphaGenome Analytics</strong> - Genomic Variant Analysis Toolkit</p>
+            <p>Analysis based on real pathogenic variants from ClinVar database</p>
+            <p>Generated with mock predictions for demonstration purposes</p>
+            <p>Report created: 2025-06-25 13:06:21</p>
+        </div>
+    </div>
+</body>
+</html>

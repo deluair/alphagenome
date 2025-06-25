@@ -31,7 +31,7 @@ pip install python-dotenv pysam
 Your AlphaGenome API key is already configured in the `.env` file:
 
 ```
-ALPHAGENOME_API_KEY=AIzaSyBxLoHZ8xDGllhqJalho9bM3FLUBQVjZhA
+ALPHAGENOME_API_KEY=
 ```
 
 > ⚠️ **Security Note**: The `.env` file containing your API key is ignored by Git to prevent accidental commits to version control.

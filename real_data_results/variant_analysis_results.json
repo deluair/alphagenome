@@ -1,0 +1,242 @@
+[
+  {
+    "variant_id": "BRCA1_c.140G>T",
+    "chromosome": "chr17",
+    "position": 43106528,
+    "reference": "G",
+    "alternate": "T",
+    "gene": "BRCA1",
+    "hgvs_c": "c.140G>T",
+    "hgvs_p": "p.Cys47Phe",
+    "clinical_significance": "Pathogenic/Likely pathogenic",
+    "condition": "Breast-ovarian cancer, familial 1",
+    "consequence": "missense_variant",
+    "predictions": {
+      "rna_seq": {
+        "reference": {
+          "mean": 0.9961441237735005,
+          "std": 0.20364079837839785,
+          "max": 1.6957697653048673,
+          "min": 0.2661910538909069
+        },
+        "alternate": {
+          "mean": 1.0830603712676878,
+          "std": 0.3052228849735372,
+          "max": 2.3448773105833713,
+          "min": 0.12360205935813479
+        },
+        "difference": {
+          "mean_difference": 0.08691624749418722,
+          "max_difference": 0.8664953870470833,
+          "total_effect": 149.3526085963522,
+          "correlation": 0.7429955823123295
+        }
+      },
+      "cage": {
+        "effect_size": 0.6829763146108178,
+        "significance": "high"
+      },
+      "dnase": {
+        "effect_size": 0.26998748244632614,
+        "significance": "high"
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-06-25T13:06:19.357384",
+      "clinvar_id": "VCV000054247",
+      "description": "Pathogenic missense variant in BRCA1 affecting DNA repair function"
+    }
+  },
+  {
+    "variant_id": "BRCA1_c.5277+1G>A",
+    "chromosome": "chr17",
+    "position": 43057051,
+    "reference": "G",
+    "alternate": "A",
+    "gene": "BRCA1",
+    "hgvs_c": "c.5277+1G>A",
+    "hgvs_p": null,
+    "clinical_significance": "Pathogenic",
+    "condition": "Breast-ovarian cancer, familial 1",
+    "consequence": "splice_donor_variant",
+    "predictions": {
+      "rna_seq": {
+        "reference": {
+          "mean": 0.9942841695071736,
+          "std": 0.20409469334693653,
+          "max": 1.6375482150224883,
+          "min": 0.3389922753935871
+        },
+        "alternate": {
+          "mean": 1.0822522304123707,
+          "std": 0.35665791510687783,
+          "max": 2.9873537599625823,
+          "min": 0.24404545588868715
+        },
+        "difference": {
+          "mean_difference": 0.08796806090519707,
+          "max_difference": 1.518437025213368,
+          "total_effect": 160.69130592730994,
+          "correlation": 0.5974650761108712
+        }
+      },
+      "cage": {
+        "effect_size": 0.3428222582897319,
+        "significance": "high"
+      },
+      "dnase": {
+        "effect_size": 0.016024617237817278,
+        "significance": "moderate"
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-06-25T13:06:19.861737",
+      "clinvar_id": "VCV000037654",
+      "description": "Pathogenic splice donor variant disrupting normal splicing"
+    }
+  },
+  {
+    "variant_id": "BRCA2_c.3160_3163del",
+    "chromosome": "chr13",
+    "position": 32337515,
+    "reference": "GATA",
+    "alternate": "",
+    "gene": "BRCA2",
+    "hgvs_c": "c.3160_3163del",
+    "hgvs_p": "p.Asp1054fs",
+    "clinical_significance": "Pathogenic",
+    "condition": "Breast-ovarian cancer, familial 2",
+    "consequence": "frameshift_variant",
+    "predictions": {
+      "rna_seq": {
+        "reference": {
+          "mean": 1.0040670039492765,
+          "std": 0.19697244480019319,
+          "max": 1.7300607833725494,
+          "min": 0.3168346061469296
+        },
+        "alternate": {
+          "mean": 1.4574745027614022,
+          "std": 0.6487802066914242,
+          "max": 3.250998861216531,
+          "min": 0.2968278790286427
+        },
+        "difference": {
+          "mean_difference": 0.45340749881212583,
+          "max_difference": 2.0077264138461306,
+          "total_effect": 503.3759120478991,
+          "correlation": 0.4376731097068123
+        }
+      },
+      "cage": {
+        "effect_size": 0.2534407845110522,
+        "significance": "moderate"
+      },
+      "dnase": {
+        "effect_size": -0.12690949396690346,
+        "significance": "moderate"
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-06-25T13:06:20.363150",
+      "clinvar_id": "RCV000031405",
+      "description": "Pathogenic frameshift deletion causing truncated protein"
+    }
+  },
+  {
+    "variant_id": "TP53_c.524G>A",
+    "chromosome": "chr17",
+    "position": 7674220,
+    "reference": "G",
+    "alternate": "A",
+    "gene": "TP53",
+    "hgvs_c": "c.524G>A",
+    "hgvs_p": "p.Arg175His",
+    "clinical_significance": "Pathogenic",
+    "condition": "Li-Fraumeni syndrome",
+    "consequence": "missense_variant",
+    "predictions": {
+      "rna_seq": {
+        "reference": {
+          "mean": 1.0071895100341075,
+          "std": 0.2060874148963581,
+          "max": 1.7082339586166633,
+          "min": 0.1338519170728718
+        },
+        "alternate": {
+          "mean": 1.0939213389898206,
+          "std": 0.29356154057338363,
+          "max": 2.0742312079012737,
+          "min": 0.25848538911201735
+        },
+        "difference": {
+          "mean_difference": 0.08673182895571273,
+          "max_difference": 0.7995551150704707,
+          "total_effect": 146.10423684811167,
+          "correlation": 0.7365024739926469
+        }
+      },
+      "cage": {
+        "effect_size": 0.5690701942227679,
+        "significance": "high"
+      },
+      "dnase": {
+        "effect_size": 0.2990058315189357,
+        "significance": "high"
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-06-25T13:06:20.865609",
+      "clinvar_id": "VCV000012771",
+      "description": "Well-known hotspot mutation in TP53 DNA-binding domain"
+    }
+  },
+  {
+    "variant_id": "CFTR_c.1521_1523delCTT",
+    "chromosome": "chr7",
+    "position": 117548628,
+    "reference": "CTT",
+    "alternate": "",
+    "gene": "CFTR",
+    "hgvs_c": "c.1521_1523delCTT",
+    "hgvs_p": "p.Phe508del",
+    "clinical_significance": "Pathogenic",
+    "condition": "Cystic fibrosis",
+    "consequence": "inframe_deletion",
+    "predictions": {
+      "rna_seq": {
+        "reference": {
+          "mean": 1.0087007550767146,
+          "std": 0.2057323679510593,
+          "max": 1.7009105899668655,
+          "min": 0.40730191385369763
+        },
+        "alternate": {
+          "mean": 1.0071425540504388,
+          "std": 0.23106348388967354,
+          "max": 1.9020855440089834,
+          "min": 0.33299960377374116
+        },
+        "difference": {
+          "mean_difference": -0.0015582010262757196,
+          "max_difference": 0.30670351649785,
+          "total_effect": 77.19550345568183,
+          "correlation": 0.9094054366470732
+        }
+      },
+      "cage": {
+        "effect_size": 0.173964357660181,
+        "significance": "moderate"
+      },
+      "dnase": {
+        "effect_size": 0.4896961136490977,
+        "significance": "high"
+      }
+    },
+    "metadata": {
+      "analysis_timestamp": "2025-06-25T13:06:21.367142",
+      "clinvar_id": "VCV000001393",
+      "description": "Most common CFTR mutation causing cystic fibrosis"
+    }
+  }
+]
